@@ -144,8 +144,8 @@ func getCreds(serviceAccount []byte) ([]byte, error) {
 		return nil, err
 	}
 
-	contianerURI := fmt.Sprintf(CONTAINER_URI, *projectID, *locationID, *clusterID)
-	req, err := http.NewRequest("GET", contianerURI, nil)
+	containerURI := fmt.Sprintf(CONTAINER_URI, *projectID, *locationID, *clusterID)
+	req, err := http.NewRequest("GET", containerURI, nil)
 
 	req.Header.Add("Authorization", "Bearer "+accessTokenResponse.AccessToken)
 	resp, err = http.DefaultClient.Do(req)
